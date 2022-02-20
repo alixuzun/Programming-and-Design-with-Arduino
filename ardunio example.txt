@@ -1,0 +1,1622 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////
+15 12 2021 �ar�amba
+//////////////////////////////////////////////////////////////////////////////////////////////////
+https://www.tinkercad.com/
+////
+byte ledPin = 13;
+
+void setup()
+{
+	pinMode(ledPin,OUTPUT);
+}
+
+void loop()
+{
+	digitalWrite(ledPin, HIGH);
+  	delay(500);
+  	digitalWrite(ledPin, LOW);
+  	delay(500);
+}
+////
+byte ledKirmizi = 13;
+byte ledMavi = 12;
+byte ledSari = 11;
+byte ledBeyaz = 10;
+
+void setup()
+{
+	pinMode(ledKirmizi,OUTPUT);
+  	pinMode(ledMavi,OUTPUT);
+  	pinMode(ledSari,OUTPUT);
+  	pinMode(ledBeyaz,OUTPUT);
+}
+
+void loop()
+{
+	digitalWrite(ledKirmizi, HIGH);
+  	delay(100);
+  	digitalWrite(ledKirmizi, LOW);
+  	delay(100);
+  	digitalWrite(ledMavi, HIGH);
+  	delay(100);
+  	digitalWrite(ledMavi, LOW);
+  	delay(100);
+  	digitalWrite(ledSari, HIGH);
+  	delay(100);
+  	digitalWrite(ledSari, LOW);
+  	delay(100);
+  	digitalWrite(ledBeyaz, HIGH);
+  	delay(100);
+  	digitalWrite(ledBeyaz, LOW);
+  	delay(100);
+}
+////
+byte ledKirmizi = 13;
+byte ledMavi = 12;
+byte ledSari = 11;
+byte ledBeyaz = 10;
+
+void setup()
+{
+	pinMode(ledKirmizi,OUTPUT);
+  	pinMode(ledMavi,OUTPUT);
+  	pinMode(ledSari,OUTPUT);
+  	pinMode(ledBeyaz,OUTPUT);
+}
+
+void loop()
+{
+	digitalWrite(ledKirmizi, HIGH);
+  	delay(100);
+  	digitalWrite(ledKirmizi, LOW);
+  	delay(100);
+  	digitalWrite(ledMavi, HIGH);
+  	delay(100);
+  	digitalWrite(ledMavi, LOW);
+  	delay(100);
+  	digitalWrite(ledSari, HIGH);
+  	delay(100);
+  	digitalWrite(ledSari, LOW);
+  	delay(100);
+  	digitalWrite(ledBeyaz, HIGH);
+  	delay(100);
+  	digitalWrite(ledBeyaz, LOW);
+  	delay(100);
+  
+    digitalWrite(ledBeyaz, 1);
+  	delay(100);
+    digitalWrite(ledBeyaz, 0);
+    delay(100); 
+    digitalWrite(ledSari, 1);
+  	delay(100);
+    digitalWrite(ledSari, 0);
+    delay(100); 
+    digitalWrite(ledMavi, 1);
+  	delay(100);
+    digitalWrite(ledMavi, 0);
+    delay(100); 
+    digitalWrite(ledKirmizi, 1);
+  	delay(100);
+    digitalWrite(ledKirmizi, 0);
+}
+////
+byte butonPin = 2;
+byte butonDurum = 0;
+
+void setup()
+{
+	pinMode(butonPin,INPUT);
+    Serial.begin(9600);
+}
+
+void loop()
+{
+	butonDurum = digitalRead(butonPin);
+  	if(butonDurum == 1)
+    {
+      Serial.println("Butona Basildi");
+    }
+  	else
+      Serial.println("Butona Basilmadi");    
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+20 12 2021 pazartesi
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte butonPin = 2;
+byte ledPin = 13;
+byte okunanDeger = 0;
+
+void setup()
+{
+	pinMode(butonPin, INPUT);
+  	pinMode(ledPin, OUTPUT); 
+    Serial.begin(9600);
+}
+
+void loop()
+{
+	okunanDeger = digitalRead(butonPin);
+  	if(okunanDeger == 1)
+    {
+      Serial.print("Buton degeri: ");
+      Serial.println(okunanDeger);
+      digitalWrite(ledPin, HIGH);
+    }
+  	else
+    {
+      Serial.print("Buton degeri: ");
+      Serial.println(okunanDeger);
+      digitalWrite(ledPin, LOW);
+    }    
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte butonPin = 2;
+byte ledPin = 13;
+byte okunanDeger = 0;
+byte ledDurum = 0;
+
+void setup()
+{
+	pinMode(butonPin, INPUT);
+  	pinMode(ledPin, OUTPUT); 
+    Serial.begin(9600);
+}
+
+void loop()
+{
+	okunanDeger = digitalRead(butonPin);
+  	if(okunanDeger == 1)
+    {
+      if (ledDurum == 0)
+      {
+        digitalWrite(ledPin, HIGH);
+        ledDurum = 1;
+        Serial.println("1");
+        delay(100);
+      }
+      else
+      {
+        digitalWrite(ledPin, LOW);
+        ledDurum = 0;
+        Serial.println("0");
+        delay(100);
+      }
+    }
+  delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte ledPin = 13;
+byte isikSensoru = A2;
+
+int isikDegeri = 0;
+
+void setup()
+{
+	pinMode(ledPin, OUTPUT);
+ 	Serial.begin(9600);
+}
+
+void loop()
+{
+	isikDegeri = analogRead(isikSensoru);
+    Serial.print("isik degeri : ");
+    Serial.println(isikDegeri);
+  	delay(100);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte ledPin = 13;
+byte isikSensoru = A2;
+
+int isikDegeri = 0;
+
+void setup()
+{
+	pinMode(ledPin, OUTPUT);
+ 	Serial.begin(9600);
+}
+
+void loop()
+{
+	isikDegeri = analogRead(isikSensoru);
+    Serial.print("isik degeri : ");
+    Serial.println(isikDegeri);
+  
+  if(isikDegeri <= 50)
+  {
+    digitalWrite(ledPin, 1);
+  }
+  else
+    digitalWrite(ledPin, 0);  
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 13;
+byte maviPin = 12;
+byte yesilPin = 11;
+  
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+    pinMode(maviPin, OUTPUT);
+    pinMode(yesilPin, OUTPUT);
+}
+
+void loop()
+{
+	digitalWrite(kirmiziPin,HIGH);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+21 12 2021 sal�
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 13;
+byte maviPin = 12;
+byte yesilPin = 11;
+  
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+    pinMode(maviPin, OUTPUT);
+    pinMode(yesilPin, OUTPUT);
+}
+
+void loop()
+{
+	digitalWrite(kirmiziPin,HIGH);
+    digitalWrite(maviPin,LOW);
+    digitalWrite(yesilPin,LOW);
+    delay(500);
+  
+ 	digitalWrite(maviPin,HIGH); 
+	digitalWrite(kirmiziPin,LOW);  
+    delay(500);
+
+	digitalWrite(yesilPin,HIGH);
+    digitalWrite(kirmiziPin,LOW);
+    delay(500); 
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 11;
+byte maviPin = 10;
+byte yesilPin = 9;
+  
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+    pinMode(maviPin, OUTPUT);
+    pinMode(yesilPin, OUTPUT);
+}
+
+void loop()
+{
+  	analogWrite(kirmiziPin, 185);
+    analogWrite(maviPin,66);
+    analogWrite(yesilPin,206);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 11;
+byte maviPin = 10;
+byte yesilPin = 9;
+
+byte potPin = A1;
+int potDegeri = 0;
+
+
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+	pinMode(maviPin, OUTPUT);
+	pinMode(yesilPin, OUTPUT);
+
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	analogWrite(kirmiziPin, OUTPUT);
+	analogWrite(maviPin, OUTPUT);
+	analogWrite(yesilPin, OUTPUT);
+
+	potDegeri = analogRead(potPin);
+	Serial.println(potDegeri);
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//potansiometre 10Kohm
+byte kirmiziPin = 11;
+byte maviPin = 10;
+byte yesilPin = 9;
+
+byte potPin = A1;
+int potDegeri = 0;
+
+
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+	pinMode(maviPin, OUTPUT);
+	pinMode(yesilPin, OUTPUT);
+
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	analogWrite(kirmiziPin, OUTPUT);
+	analogWrite(maviPin, OUTPUT);
+	analogWrite(yesilPin, OUTPUT);
+
+	potDegeri = analogRead(potPin);
+  	potDegeri = map(potDegeri,0,1023,0,255);
+    analogWrite(kirmiziPin,potDegeri);
+    
+	Serial.println(potDegeri);
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 11;
+byte maviPin = 10;
+byte yesilPin = 9;
+
+byte potPinKirmizi = A0;
+byte potPinMavi = A1;
+byte potPinYesil = A2;
+int potDegeri = 0;
+
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+	pinMode(maviPin, OUTPUT);
+	pinMode(yesilPin, OUTPUT);
+
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	analogWrite(kirmiziPin, OUTPUT);
+	analogWrite(maviPin, OUTPUT);
+	analogWrite(yesilPin, OUTPUT);
+
+	potDegeri = analogRead(potPinKirmizi);
+  	potDegeri = map(potDegeri,0,1023,0,255);
+    analogWrite(kirmiziPin,potDegeri);
+  
+  	potDegeri = analogRead(potPinMavi);
+  	potDegeri = map(potDegeri,0,1023,0,255);
+    analogWrite(maviPin,potDegeri);
+  
+  	potDegeri = analogRead(potPinYesil);
+  	potDegeri = map(potDegeri,0,1023,0,255);
+    analogWrite(yesilPin,potDegeri);
+    
+	//Serial.print("Kirmizi: ");
+    //Serial.println(potPinKirmizi);
+    //delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//http://www.cplusplus.com/
+//////////////////////////////////////////////////////////////////////////////////////////////////
+22 12 2021 �ar�amba 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+servo motorlar kahverengi gnd, k�rm�z� art�, turuncu sinyal g�c�
+	servoMotor.write(0) hareket de�eri
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+int i;
+Servo servoMotor;
+
+void setup()
+{
+	servoMotor.attach(9);
+	servoMotor.write(0);
+
+}
+
+void loop()
+{
+	for (i = 0; i < 180; i++)
+	{
+		delay(20);
+		servoMotor.write(i);
+	}
+	for (i ; i > 0; i--)
+	{
+		delay(20);
+		servoMotor.write(i);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+int i;
+byte servoPin = 11;
+byte potPin = A0;
+Servo servoMotor;
+
+int potDegeri = 0;
+int servoAcisi = 0;
+
+void setup()
+{
+	servoMotor.attach(servoPin);
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	potDegeri = analogRead(potPin);
+	servoAcisi = map(potDegeri, 0, 1023, 0, 180);
+	servoMotor.write(servoAcisi);
+
+	Serial.println(servoAcisi);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte sicaklikPin = A0;
+byte ledPin = 13;
+byte buzzerPin = 12;
+
+int sicaklikDegeri = 0;
+float sicaklikGerilim = 0;
+float sicaklik = 0;
+
+void setup()
+{
+	pinMode(ledPin, OUTPUT);
+    pinMode(buzzerPin, OUTPUT);
+}
+
+void loop()
+{
+  //...
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+27 12 2021 pazartesi
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte sicaklikPin = A0;
+byte ledPin = 13;
+byte buzzerPin = 12;
+
+int sicaklikDegeri = 0;
+
+void setup()
+{
+	pinMode(ledPin, OUTPUT);
+	pinMode(buzzerPin, OUTPUT);
+
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	sicaklikDegeri = analogRead(sicaklikGerilim);
+
+	if (sicaklikDegeri > 178)
+	{
+		digitalWrite(ledPin, HIGH);
+		digitalWrite(buzzerPin, HIGH);
+		delay(500);
+		digitalWrite(ledPin, LOW);
+		digitalWrite(buzzerPin, LOW);
+		delay(500);
+	}
+	else
+	{
+		digitalWrite(ledPin, LOW);
+		digitalWrite(buzzerPin, LOW);
+	}
+
+	Serial.print("Sicaklik degeri :");
+	Serial.println(sicaklikDegeri);
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte sicaklikPin = A0;
+byte ledPin = 13;
+byte buzzerPin = 12;
+
+int sicaklikDegeri = 0;
+float sicaklikGerilim = 0;
+float sicaklik = 0;
+
+int zaman = 500;
+
+void setup()
+{
+	pinMode(ledPin, OUTPUT);
+	pinMode(buzzerPin, OUTPUT);
+
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	sicaklikDegeri = analogRead(sicaklikPin);
+	sicaklikGerilim = (5000.0/1023.0) * sicaklikDegeri;
+
+	sicaklik = sicaklikGerilim / 10.0;
+
+	if (sicaklik > 27.0)
+	{
+		digitalWrite(ledPin, HIGH);
+		digitalWrite(buzzerPin, HIGH);
+		delay(500);
+		digitalWrite(ledPin, LOW);
+		digitalWrite(buzzerPin, LOW);
+		delay(zaman);
+	}
+	else
+	{
+		digitalWrite(ledPin, LOW);
+		digitalWrite(buzzerPin, LOW);
+	}
+
+	Serial.print("Sicaklik degeri :");
+	Serial.println(sicaklikDegeri);
+	delay(zaman);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+Hareket sens�r�..
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte hareketPin = 3;
+int hareketDegeri = 0;
+
+void setup()
+{
+	pinMode(hareketPin, INPUT);
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	hareketDegeri = digitalRead(hareketPin);
+	Serial.print(hareketDegeri);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+28 12 2021 sal�
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+
+Servo benimServom;
+byte servoPin = 11;
+byte hareketPin = 3;
+int hareketDegeri = 0;
+
+void setup()
+{
+	benimServom.attach(servoPin);
+	pinMode(hareketPin, INPUT);
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	hareketDegeri = digitalRead(hareketPin);
+	Serial.println(hareketDegeri);
+
+	if (hareketDegeri == 1)
+	{
+		benimServom.write(90);
+		delay(5000);
+	}
+	else
+	{
+		benimServom.write(0);
+		(5000);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <IRremote.h>
+byte aliciPin = 3; // Sinyal giri� pini
+
+IRrecv okumaPini(aliciPin); // Al�c�n�n tan�mlanmas�
+decode_results sonuc; // al�c�ya gelen sinyalin digital kar��l���n� tutucak de�i�ken 
+int deger = 0;  // sonuc dan gelen de�eri 'deger' de sakla
+
+int sariLedPin = 9;
+int yesilLedPin = 10;
+
+void setup()
+{
+  okumaPini.enableIRIn(); // al�c� haberle�mey� ba�lat 
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  if (okumaPini.decode(&sonuc))
+  {
+    deger = sonuc.value;
+    Serial.println();
+    Serial.print("tam sayi :");
+    Serial.println(deger);
+    Serial.println();
+
+    okumaPini.resume();
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+03 01 2022 Pazartesi..
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte potPin = A0;
+int potDeger;
+
+void setup()
+{
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	potDeger = analogRead(A0);
+	Serial.print("Pot Degeri : ");
+	Serial.println(potDeger);
+	delay(200);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 13;
+byte yesilPin = 12;
+byte maviPin = 11;
+
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+	pinMode(yesilPin, OUTPUT);
+	pinMode(maviPin, OUTPUT);
+}
+
+void loop()
+{
+	// Ortak Katot..
+	// Kirmizi
+	digitalWrite(kirmiziPin, HIGH);
+	digitalWrite(yesilPin, LOW);
+	digitalWrite(maviPin, LOW);
+	delay(500);
+	// Yesil
+	digitalWrite(kirmiziPin, LOW);
+	digitalWrite(yesilPin, HIGH);
+	digitalWrite(maviPin, LOW);
+	delay(500);
+	// Mavi
+	digitalWrite(kirmiziPin, LOW);
+	digitalWrite(yesilPin, LOW);
+	digitalWrite(maviPin, HIGH);
+	delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 13;
+byte yesilPin = 12;
+byte maviPin = 11;
+byte buttonPin = 2;
+byte buttonDurumu = 0;
+
+void setup()
+{
+  pinMode(kirmiziPin, OUTPUT);
+  pinMode(yesilPin, OUTPUT);
+  pinMode(maviPin, OUTPUT);
+  pinMode(buttonPin, INPUT);
+
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  buttonDurumu = digitalRead(buttonPin);
+  Serial.print("Buton Durumu : ");
+  Serial.println(buttonDurumu);
+
+  delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 13;
+byte yesilPin = 12;
+byte maviPin = 11;
+byte buttonPin = 2;
+byte buttonDurumu = 0;
+
+void setup()
+{
+	pinMode(kirmiziPin, OUTPUT);
+	pinMode(yesilPin, OUTPUT);
+	pinMode(maviPin, OUTPUT);
+	pinMode(buttonPin, INPUT);
+
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	buttonDurumu = digitalRead(buttonPin);
+	Serial.print("Buton Durumu : ");
+	Serial.println(buttonDurumu);
+	if (buttonDurumu == 1)
+	{
+		// ortak anot yakmak
+		// digitalWrite(kirmiziPin, LOW);
+		// digitalWrite(maviPin, LOW);
+		// digitalWrite(yesilPin, HIGH);
+
+		digitalWrite(kirmiziPin, HIGH);
+		digitalWrite(maviPin, HIGH);
+		digitalWrite(yesilPin, LOW);
+	}
+	else
+	{
+		// ortak anot s�nd�rme
+		// digitalWrite(kirmiziPin, HIGH);
+		// digitalWrite(maviPin, HIGH);
+		// digitalWrite(yesilPin, HIGH);
+
+		digitalWrite(kirmiziPin, LOW);
+		digitalWrite(maviPin, LOW);
+		digitalWrite(yesilPin, LOW);
+	}
+	//delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+04 01 2022 Sal�..
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte kirmiziPin = 13;
+byte yesilPin = 12;
+byte maviPin = 11;
+byte buttonPin = 2;
+byte buttonDurumu = 0;
+byte potPin = A0;
+int potDegeri = 0;
+
+void setup()
+{
+  pinMode(kirmiziPin, OUTPUT);
+  pinMode(yesilPin, OUTPUT);
+  pinMode(maviPin, OUTPUT);
+  pinMode(buttonPin, INPUT);
+
+  Serial.begin(9600);
+}
+void loop()
+{
+  buttonDurumu = digitalRead(buttonPin);
+  potDegeri = analogRead(potPin);
+
+  Serial.print("Buton Durumu : ");
+  Serial.println(buttonDurumu);
+
+  Serial.print("potDegeri: ");
+  Serial.println(potDegeri);
+  delay(250);
+
+  if (buttonDurumu == 1)
+  {
+    morisik();
+  }
+  else if(potDegeri <= 500)
+  {
+    kirmiziisik();
+  }
+  else if(potDegeri < 1010)
+  {
+    maviisik();
+  }
+  else
+  {
+    kapat();
+  }
+}
+void morisik()
+{
+  digitalWrite(kirmiziPin, HIGH);
+  digitalWrite(yesilPin, LOW);
+  digitalWrite(maviPin, HIGH);
+}
+void kirmiziisik()
+{
+  digitalWrite(kirmiziPin, HIGH);
+  digitalWrite(yesilPin, LOW);
+  digitalWrite(maviPin, LOW);
+}
+void maviisik()
+{
+  digitalWrite(kirmiziPin, LOW);
+  digitalWrite(yesilPin, LOW);
+  digitalWrite(maviPin, HIGH);
+}
+void kapat()
+{
+  digitalWrite(kirmiziPin, LOW);
+  digitalWrite(yesilPin, LOW);
+  digitalWrite(maviPin, LOW);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte ledPin = 13;
+byte isikSendoru = A0;
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  Serial.print("isik degeri :");
+  Serial.println(analogRead(isikSendoru));
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte ledPin = 13;
+byte isikSendoru = A0;
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  Serial.print("isik degeri :");
+  Serial.println(analogRead(isikSendoru));
+
+  if (analogRead(isikSendoru) < 40)  // 40 de�erini ���k kuvvetine g�re y�ksel yazabilirsiniz..
+  {
+    digitalWrite(ledPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin, LOW);
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+05 01 2022 �ar�amba
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte buzzerPin = 11;
+byte potPin = A0;
+
+int potDegeri = 0;
+
+void setup()
+{
+	pinMode(buzzerPin, OUTPUT);
+	Serial.begin(9600);
+}
+void loop()
+{
+	potDegeri = analogRead(potPin);
+	Serial.println(potDegeri);
+	int analogCikis = map(potDegeri, 0, 1023, 0, 255);
+	analogWrite(buzzerPin, analogCikis);
+
+	Serial.println(analogCikis);
+	delay(250);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+
+Servo servoMotor;
+
+byte servoPin = 9;
+
+
+
+
+void setup()
+{
+	servoMotor.attach(servoPin);
+}
+void loop()
+{
+	servoMotor.write(90);
+	delay(500);
+	servoMotor.write(0);
+	delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+
+Servo servoMotor;
+
+byte servoPin = 9;
+int i = 0;
+
+void setup()
+{
+	servoMotor.attach(servoPin);
+}
+void loop()
+{
+	for (i; i <= 180; i++)
+	{
+		servoMotor.write(i);
+		delay(40);
+	}
+	for (i; i >= 0; i--)
+	{
+		servoMotor.write(i);
+		delay(40);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+
+Servo servoMotor;
+
+byte potPin = A0;
+byte servoPin = 9;
+
+int potDegeri = 0;
+int servoCikis = 0;
+
+void setup()
+{
+	servoMotor.attach(servoPin);
+}
+void loop()
+{
+	potDegeri = analogRead(potPin);
+	int servoCikis = map(potDegeri, 0, 1023, 0, 180);
+	servoMotor.write(servoCikis);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+17 01 2022 Pazartesi
+//////////////////////////////////////////////////////////////////////////////////////////////////
+DC motor..
+L298N motor s�r�c� kart� kullan�yoruz
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte motor1 = 11;
+byte motor2 = 10;
+
+void setup()
+{
+	pinMode(motor1, OUTPUT);
+	pinMode(motor2, OUTPUT);
+}
+void loop()
+{
+	digitalWrite(motor1, HIGH);
+	delay(5000);
+	digitalWrite(motor1, LOW);
+	delay(1000);
+
+	digitalWrite(motor2, HIGH);
+	delay(5000);
+	digitalWrite(motor2, LOW);
+	delay(1000);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte motor1 = 11;
+byte motor2 = 10;
+
+byte potPin = A0;
+
+int potDeger = 0;
+int potOran = 0;
+
+void setup()
+{
+  pinMode(motor1, OUTPUT);
+  pinMode(motor2, OUTPUT);
+
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  potDeger = analogRead(potPin);
+  potOran = map(potDeger, 0, 1023, 0, 255);
+
+  digitalWrite(motor1, potOran);
+  Serial.println(potOran);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+step motor..
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte in1 = 11;
+byte in2 = 10;
+byte in3 = 9;
+byte in4 = 8;
+
+void setup()
+{
+	pinMode(in1, OUTPUT);
+	pinMode(in2, OUTPUT);
+	pinMode(in3, OUTPUT);
+	pinMode(in4, OUTPUT);
+}
+
+void loop()
+{
+	motorDonme(512);
+	delay(2000);
+	motorTersDonme(512);
+	delay(2000);
+
+}
+
+void motorDonme(int adim) // saat y�n�nde step motorun tam d�nmesini sa�lar..
+{
+	for (int i = 0; i < adim; i++)
+	{
+		digitalWrite(in4, HIGH);
+		delay(5);
+		digitalWrite(in4, LOW);
+
+		digitalWrite(in3, HIGH);
+		delay(5);
+		digitalWrite(in3, LOW);
+
+		digitalWrite(in2, HIGH);
+		delay(5);
+		digitalWrite(in2, LOW);
+
+		digitalWrite(in1, HIGH);
+		delay(5);
+		digitalWrite(in1, LOW);
+	}
+
+}
+void motorTersDonme(int adim) // saat y�n�nde step motorun tam tur ters d�nmesini sa�lar..
+{
+	for (int i = 0; i < adim; i++)
+
+	{
+		digitalWrite(in1, HIGH);
+		delay(5);
+		digitalWrite(in1, LOW);
+
+		digitalWrite(in2, HIGH);
+		delay(5);
+		digitalWrite(in2, LOW);
+
+		digitalWrite(in3, HIGH);
+		delay(5);
+		digitalWrite(in3, LOW);
+
+		digitalWrite(in4, HIGH);
+		delay(5);
+		digitalWrite(in4, LOW);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+18 01 2022 sal�..
+//////////////////////////////////////////////////////////////////////////////////////////////////
+https://github.com/tardate/X113647Stepper
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Stepper.h>
+
+const int adimsayisi = 200;
+
+
+
+Stepper stepMotor(adimsayisi, 8, 9, 10, 11);
+void setup() {
+	// put your setup code here, to run once:
+	stepMotor.setSpeed(30);
+}
+
+void loop() {
+	// put your main code here, to run repeatedly:
+	stepMotor.step(adimsayisi);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte trigPin = 8;
+byte echoPin = 9;
+
+int sure = 0;
+float mesafe = 0;
+
+void setup()
+{
+	pinMode(trigPin, OUTPUT);
+	pinMode(echoPin, INPUT);
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	digitalWrite(trigPin, LOW); // Ba�lang�� hatal� de�er almamak i�in trig pini kapatt�k..
+	delayMicroseconds(2);
+	digitalWrite(trigPin, HIGH); // Her 10 mikrosaniyede pini �al��t�r�yoruz.
+	delayMicroseconds(10);
+	digitalWrite(trigPin, LOW);
+	sure = pulseIn(echoPin, HIGH);
+	mesafe = (sure / 2) / 29.1;
+	Serial.print("Mesafe = ");
+	Serial.print(mesafe);
+	Serial.println(" cm");
+	Serial.println("----------");
+	delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+park sens�r�
+ 3 ~  7 cm
+ 8 ~ 12 cm
+13 ~ 17 cm
+18 ~ 22 cm
+23 ~ 27 cm 
+///////////////////
+byte trigPin = 8;
+byte echoPin = 9;
+byte buzzerPin = 13;
+ 
+byte ledPin1 = 4;
+byte ledPin2 = 5;
+byte ledPin3 = 6;
+byte ledPin4 = 7;
+int sure = 0;
+
+float mesafe = 0;
+
+void setup()
+{
+	Serial.begin(9600);
+	pinMode(trigPin, OUTPUT);
+	pinMode(echoPin, INPUT);
+
+	pinMode(buzzerPin, OUTPUT);
+
+	pinMode(ledPin1, OUTPUT);
+	pinMode(ledPin2, OUTPUT);
+	pinMode(ledPin3, OUTPUT);
+	pinMode(ledPin4, OUTPUT);
+}
+
+void loop()
+{
+	digitalWrite(trigPin, LOW);
+	delayMicroseconds(2);
+
+	digitalWrite(trigPin, HIGH);
+	delayMicroseconds(10);
+	digitalWrite(trigPin, LOW);
+
+	sure = pulseIn(echoPin, HIGH);
+	mesafe = (sure / 2) / 29, 1;
+
+	Serial.print("Mesafe = ");
+	Serial.print(mesafe);
+	Serial.println(" cm");
+	Serial.println("----------");
+	delay(500);
+
+	if (mesafe >= 3 && mesafe <= 7)
+	{
+		digitalWrite(buzzerPin, HIGH);
+		delay(50);
+		digitalWrite(buzzerPin, LOW);
+		delay(50);
+		digitalWrite(ledPin1, HIGH);
+		digitalWrite(ledPin2, LOW);
+		digitalWrite(ledPin3, LOW);
+		digitalWrite(ledPin4, LOW);
+	}
+	else if (mesafe >= 8 && mesafe <= 12)
+	{
+		digitalWrite(buzzerPin, HIGH);
+		delay(150);
+		digitalWrite(buzzerPin, LOW);
+		delay(150);
+		digitalWrite(ledPin1, HIGH);
+		digitalWrite(ledPin2, HIGH);
+		digitalWrite(ledPin3, LOW);
+		digitalWrite(ledPin4, LOW);
+	}
+	else if (mesafe >= 13 && mesafe <= 17)
+	{
+		digitalWrite(buzzerPin, HIGH);
+		delay(300);
+		digitalWrite(buzzerPin, LOW);
+		delay(300);
+		digitalWrite(ledPin1, HIGH);
+		digitalWrite(ledPin2, HIGH);
+		digitalWrite(ledPin3, HIGH);
+		digitalWrite(ledPin4, LOW);
+	}
+	else if (mesafe >= 18 && mesafe <= 22)
+	{
+		digitalWrite(buzzerPin, HIGH);
+		delay(450);
+		digitalWrite(buzzerPin, LOW);
+		delay(450);
+		digitalWrite(ledPin1, HIGH);
+		digitalWrite(ledPin2, HIGH);
+		digitalWrite(ledPin3, HIGH);
+		digitalWrite(ledPin4, HIGH);
+	}
+	else
+	{
+		digitalWrite(buzzerPin, LOW);
+		digitalWrite(ledPin1, LOW);
+		digitalWrite(ledPin2, LOW);
+		digitalWrite(ledPin3, LOW);
+		digitalWrite(ledPin4, LOW);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+19 01 2022 �ar�amba
+//////////////////////////////////////////////////////////////////////////////////////////////////
+Engelden ka�an robot
+//////////////////////////////////////////////////////////////////////////////////////////////////
+byte trigPin = 5;
+byte echoPin = 4;
+byte motor1 = 13;
+byte motor2 = 12;
+
+
+byte motorA = 9;
+byte motor3 = 11;
+byte motor4 = 10;
+byte motorB = 6;
+byte potPin = A0;
+int sure = NULL;
+float mesafe = 0;
+
+void setup()
+{
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  pinMode(motor1, OUTPUT);
+  pinMode(motor2, OUTPUT);
+  pinMode(motorA, OUTPUT);
+
+  pinMode(motor3, OUTPUT);
+  pinMode(motor4, OUTPUT);
+  pinMode(motorB, OUTPUT);
+
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(15);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  sure = pulseIn(echoPin, HIGH);
+  mesafe = sure / 29.1 / 2;
+  Serial.println(mesafe);
+  ileri();
+  if (mesafe <= 5)
+  {
+    dur();
+    delay(1000);
+    geri();
+    delay(500);
+    sagDon();
+    delay(500);
+  }
+  else
+    ileri();
+}
+
+
+void ileri()
+{
+  digitalWrite(motor1, HIGH);
+  digitalWrite(motor2, LOW);
+
+  digitalWrite(motor3, HIGH);
+  digitalWrite(motor4, LOW);
+}
+
+void dur()
+{
+  digitalWrite(motor1, LOW);
+  digitalWrite(motor2, LOW);
+
+  digitalWrite(motor3, LOW);
+  digitalWrite(motor4, LOW);
+}
+void geri()
+{
+  digitalWrite(motor1, LOW);
+  digitalWrite(motor2, HIGH);
+
+  digitalWrite(motor3, LOW);
+  digitalWrite(motor4, HIGH);
+}
+void sagDon()
+{
+  digitalWrite(motor1, LOW);
+  digitalWrite(motor2, LOW);
+
+  digitalWrite(motor3, HIGH);
+  digitalWrite(motor4, LOW);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+07 02 2022 Pazartesi
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <dht11.h>
+
+dht11 dhtSensor;
+
+byte sensor;
+byte sensorPin = 2;
+
+
+void setup()
+{
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	int kontrol = dhtSensor.read(sensorPin);
+	Serial.println(kontrol);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <dht11.h>
+
+dht11 dhtSensor;
+
+byte sensor;
+byte sensorPin = 2;
+
+
+void setup()
+{
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	int kontrol = dhtSensor.read(sensorPin);
+	int sicaklik = dhtSensor.temperature;
+	int nem = dhtSensor.humidity;
+
+	Serial.print("Sicaklik :");
+	Serial.print(sicaklik);
+	Serial.println("�");
+	delay(200);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <dht11.h>
+
+dht11 dhtSensor;
+
+byte sensor;
+byte sensorPin = 2;
+
+
+void setup()
+{
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	int kontrol = dhtSensor.read(sensorPin);
+	int sicaklik = dhtSensor.temperature;
+	int nem = dhtSensor.humidity;
+
+	Serial.print("Sicaklik :");
+	Serial.print(sicaklik);
+	Serial.println("�");
+
+	Serial.println("-----------");
+
+	Serial.print("Nem Orani: % ");
+	Serial.println(nem);
+	delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <LiquidCrystal_I2C.h>
+
+
+#include <dht11.h>
+
+dht11 dhtSensor;
+LiquidCrystal_I2C ekran (0x27, 16, 2);
+byte sensor;
+byte sensorPin = 2;
+
+
+void setup()
+{
+  Serial.begin(9600);
+  // ekran.init();
+  ekran.begin();
+  ekran.backlight();
+}
+
+void loop()
+{
+  int kontrol = dhtSensor.read(sensorPin);
+  int sicaklik = dhtSensor.temperature;
+  int nem = dhtSensor.humidity;
+
+  ekran.setCursor(0, 0);
+  ekran.print("sicaklik = ");
+  ekran.print(sicaklik);
+  ekran.print("c");
+
+  delay(500);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+09 02 2022 �ar�mba
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <RFID.h>
+#include <SPI.h>
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C ekran(0x27, 16, 2);
+RFID rfid(10, 9);
+
+void setup()
+{
+  ekran.begin();
+  ekran.backlight();
+  SPI.begin();
+  rfid.init();
+}
+
+void loop()
+{
+  if (rfid.isCard())
+  {
+    if (rfid.readCardSerial())
+    {
+      ekran.setCursor(0, 0);
+      ekran.print(rfid.serNum[0]);
+      ekran.print(",");
+      ekran.print(rfid.serNum[1]);
+      ekran.print(",");
+      ekran.print(rfid.serNum[2]);
+      ekran.print(",");
+      ekran.setCursor(0, 1);
+      ekran.print(rfid.serNum[3]);
+      ekran.print(",");
+      ekran.print(rfid.serNum[4]);
+    }
+  }
+  rfid.halt();
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+#include <RFID.h>
+#include <SPI.h>
+#include <LiquidCrystal_I2C.h>
+
+Servo servoMotor;
+RFID rfid(10, 9);
+LiquidCrystal_I2C ekran(0x27, 16, 2);
+
+byte kirmiziLed = 8;
+byte yesilLed = 7;
+byte servoPin = 6;
+byte kartNo[5] = { 57, 29, 233, 169, 100 }; // kendi 'rfid' kart�n�z�n ofset'ini gireceksiniz.
+
+boolean izin = true;
+
+void setup()
+{
+	ekran.begin();
+	ekran.backlight();
+	SPI.begin();
+	rfid.init();
+
+	servoMotor.attach(servoPin);
+	pinMode(kirmiziLed, OUTPUT);
+	pinMode(yesilLed, OUTPUT);
+}
+// 57 29 233 169 100
+void loop()
+{
+	izin = true;
+	if (rfid.isCard() == true)
+	{
+		if (rfid.readCardSerial() == true)
+		{
+			ekran.setCursor(0, 0);
+			ekran.print(rfid.serNum[0]);
+			ekran.print(".");
+			ekran.print(rfid.serNum[1]);
+			ekran.print(".");
+			ekran.print(rfid.serNum[2]);
+			ekran.print(".");
+			ekran.setCursor(0, 1);
+			ekran.print(rfid.serNum[3]);
+			ekran.print(".");
+			ekran.print(rfid.serNum[4]);
+		}
+		for (int i = 0; i < 5; i++)
+		{
+			if (rfid.serNum[i] != kartNo[i])
+			{
+				izin = false;
+			}
+		}
+		if (izin == true)
+		{
+			ekran.clear();
+			ekran.setCursor(0, 0);
+			ekran.print("izin verildi");
+			servoMotor.write(90);
+			digitalWrite(yesilLed, HIGH);
+			delay(2000);
+			digitalWrite(yesilLed, LOW);
+		}
+		else
+		{
+			ekran.clear();
+			ekran.setCursor(0, 0);
+			ekran.print("izin verilmedi");
+			servoMotor.write(0);
+			digitalWrite(kirmiziLed, HIGH);
+			delay(2000);
+			digitalWrite(kirmiziLed, LOW);
+		}
+	}
+	rfid.halt();
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+14 02 2022 pazartesi 
+///////
+http://appinventor.mit.edu/
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#include <SoftwareSerial.h>
+
+SoftwareSerial baglanti(7, 8); // rx, tx
+
+byte ledPin = 13;
+
+String gelenVeri;
+
+void setup()
+{
+	pinMode(ledPin, OUTPUT);
+	baglanti.begin(9600);
+}
+
+void loop()
+{
+	while (baglanti.available())
+	{
+		char gelenKarakter = baglanti.read();
+		gelenVeri += gelenKarakter;
+	}
+
+	if (gelenVeri.length() > 0)
+	{
+		if (gelenVeri == "a�")
+		{
+			digitalWrite(ledPin, HIGH);
+		}
+		else if (gelenVeri == "kapat")
+		{
+			digitalWrite(ledPin, LOW);
+		}
+	}
+	gelenVeri = "";
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
